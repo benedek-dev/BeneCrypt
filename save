@@ -9,12 +9,6 @@ app.use(express.json());
 
 const HYPIXEL_API_KEY = process.env.HYPIXEL_API_KEY;
 
-// Ruta de prueba para comprobar que el servidor responde
-//app.get('/', (req, res) => {
-//    res.send('Backend funcionando correctamente');
-//});
-
-// Ruta para obtener información de un jugador de Hypixel usando su UUID
 app.get("/player/:uuid", async (req, res) => {
     try {
         const { uuid } = req.params;
@@ -27,7 +21,4 @@ app.get("/player/:uuid", async (req, res) => {
     }
 });
 
-const port = 3001;
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+app.listen(3001, () => console.log("Backend running on port 3001"));
